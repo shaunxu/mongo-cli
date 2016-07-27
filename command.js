@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectID;
 module.exports = function (db, callback) {
     // put you command and show result here.
 
-    db.collection('projects').count({
+    db.collection('project_tasks').count({
     "$and" : [
         {
             "$or" : [
