@@ -16,7 +16,9 @@ MongoClient.connect(uri, (error, db) => {
     else {
         console.log(`INFO: Connected to MongoDB ${uri}`);
 
+        console.time('command');
         require('./command')(db, (error) => {
+            console.timeEnd('command');
             if (error) {
                 console.log(`Error: Failed to run command on MongoDB. ${JSON.stringify(error, null, 2)}`);
             }
