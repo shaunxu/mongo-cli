@@ -8,7 +8,7 @@ const user = argv.user;
 const pass = argv.pass;
 const authDb = argv['auth-db'];
 
-const command = require('./query');
+const command = require('./command');
 if (command && command.collection && command.query) {
     const MongoClient = require('mongodb').MongoClient;
     const uri = `mongodb://${host}:${port}/${authDb}`;
