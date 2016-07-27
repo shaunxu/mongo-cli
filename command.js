@@ -15,12 +15,12 @@ module.exports = function (db, callback) {
                     is_archived: 1
                 }
             ]
-    }).toArray((error, projects) => {
+    }).explain((error, result) => {
         if (error) {
             return callback(error);
         }
         else {
-            console.log(projects.length);
+            console.log(JSON.stringify(result, null, 2));
             return callback(null);
         }
     });
