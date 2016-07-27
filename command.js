@@ -15,7 +15,7 @@ module.exports = function (db, callback) {
                     is_archived: 1
                 }
             ]
-    }, (error, projects) => {
+    }).toArray((error, projects) => {
         if (error) {
             return callback(error);
         }
