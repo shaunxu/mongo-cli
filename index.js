@@ -6,7 +6,7 @@ const host = argv.host;
 const port = argv.port;
 const user = argv.user;
 const pass = argv.pass;
-const authDb = argv.['auth-db'];
+const authDb = argv['auth-db'];
 
 const command = require('./query');
 if (command && command.collection && command.query) {
