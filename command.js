@@ -5,25 +5,37 @@ const ObjectId = require('mongodb').ObjectID;
 module.exports = function (db, callback) {
     // put you command and show result here.
 
-    db.collection('projects').find({
-        team: ObjectId("5568229f68c24113327624d8"),
-        $or: [
-                {
-                    is_deleted: 1
-                },
-                {
-                    is_archived: 1
-                }
-            ]
-    }).explain((error, result) => {
+    db.collection('projects').count({
+        team: ObjectId('567b66f417986913404da9ff')
+    }, (error, count) => {
         if (error) {
             return callback(error);
         }
         else {
-            console.log(JSON.stringify(result, null, 2));
+            console.log(JSON.stringify(count, null, 2));
             return callback(null);
         }
     });
+
+    // db.collection('projects').find({
+    //     team: ObjectId("5568229f68c24113327624d8"),
+    //     $or: [
+    //             {
+    //                 is_deleted: 1
+    //             },
+    //             {
+    //                 is_archived: 1
+    //             }
+    //         ]
+    // }).explain((error, result) => {
+    //     if (error) {
+    //         return callback(error);
+    //     }
+    //     else {
+    //         console.log(JSON.stringify(result, null, 2));
+    //         return callback(null);
+    //     }
+    // });
 
 //     db.collection('project_tasks').count({
 //     "$and" : [
