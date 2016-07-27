@@ -1,19 +1,15 @@
 'use strict';
 
 const argv = require('minimist')(process.argv.slice(2));
-// const uri = argv.uri;
-const host = argv.host;
-const port = argv.port;
-const user = argv.user;
-const pass = argv.pass;
-const authDb = argv['auth-db'];
+const uri = argv.uri;
+// const host = argv.host;
+// const port = argv.port;
+// const user = argv.user;
+// const pass = argv.pass;
+// const authDb = argv['auth-db'];
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = `mongodb://${host}:${port}/${authDb}`;
-MongoClient.connect(uri, {
-    user: user,
-    pass: pass
-}, (error, db) => {
+MongoClient.connect(uri, (error, db) => {
     if (error) {
         console.log(`Error: Failed to connect to MongoDB: ${uri}. ${JSON.stringify(error, null, 2)}`);
     }
