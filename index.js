@@ -13,9 +13,11 @@ if (command && command.collection && command.query) {
     const MongoClient = require('mongodb').MongoClient;
     MongoClient.connect(uri, (error, db) => {
         if (error) {
-            console.log(`Error: Failed to connect to MongoDB. ${JSON.stringify(error, null, 2)}`);
+            console.log(`Error: Failed to connect to MongoDB: ${uri}. ${JSON.stringify(error, null, 2)}`);
         }
         else {
+            console.log(`INFO: Connected to MongoDB ${uri}`);
+
             require('./command')(db, (error) => {
                 if (error) {
                     console.log(`Error: Failed to run command on MongoDB. ${JSON.stringify(error, null, 2)}`);
