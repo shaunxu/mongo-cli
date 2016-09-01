@@ -2,14 +2,20 @@
 Very simple MongoDB Client in Node.js
 
 ```js
-console.log('Shaun');
+(function () {
+    console.log('Shaun');
+})();
 ```
 
 ```javascript
-console.log('Shaun');
+(function () {
+    console.log('Shaun');
+})();
 ```
 
 ```diff
--console.log('Shaun');
-+console.log('Shaun');
+(function () {
+-   console.log('Shaun');
++   console.log('Shaun');    
+})();
 ```
