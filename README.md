@@ -13,7 +13,7 @@ Very simple MongoDB Client in Node.js
 })();
 ```
 
-```diff
+```js diff
 (function () {
 -   console.log('Shaun');
 +   console.log('Shaun');    
