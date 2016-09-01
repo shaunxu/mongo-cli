@@ -8,3 +8,8 @@ console.log('Shaun');
 ```javascript
 console.log('Shaun');
 ```
+
+```diff
+-console.log('Shaun');
++console.log('Shaun');
+```
